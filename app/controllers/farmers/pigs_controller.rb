@@ -30,6 +30,9 @@ class Farmers::PigsController < ApplicationController
   end
 
   def destroy
+    @pig = Pig.find(params[:id])
+    @pig.destroy
+    redirect_to farmers_pigs_path
   end
 
   private
