@@ -1,0 +1,18 @@
+<div class="content-container">
+<div class="rental-card">
+<% d_start = @rental.start_date %>
+<% d_end = @rental.end_date %>
+<p><%= d_start.day %>/<%= d_start.month %>/<%= d_start.year %> - <%= d_end.day %>/<%= d_end.month %>/<%= d_end.year %></p>
+
+<%# trouver une façon d'afficher le prix, ma méthode ci dessous ne fonctionne pas %>
+<%# <p><%= @pig.daily_price * (@rental.end_date - @rental.start_date) %>
+
+<p><%= @rental.user.email %> - <%= @rental.pig.name %></p>
+</div>
+
+<%# Problème dans mon form, je n'arrive pas à ce que le cercle de accepted soit sur la bonne ligne %>
+<%= simple_form_for @rental do |f| %>
+<%= f.input :status, as: :radio_buttons, collection: ['accepted', 'declined'] %>
+<%= f.submit %>
+<% end %>
+</div>
