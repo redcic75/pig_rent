@@ -1,0 +1,15 @@
+<%= form_for @pig do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :required_space %>
+  <%= f.text_field :required_space %>
+
+  <%= f.label :eat_capacity %>
+  <%= f.text_field :eat_capacity %>
+
+  <%= f.label :daily_price %>
+  <%= f.text_field :daily_price %>
+
+  <%= f.submit %>
+<% end %>
