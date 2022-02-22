@@ -22,8 +22,11 @@ class Farmers::PigsController < ApplicationController
 
   def update
     @pig = Pig.find(params[:id])
-    @pig.update(pig_params)
-    redirect_to(farmers_pig_path(@pig.id))
+    if @pig.update(pig_params)
+      redirect_to(farmers_pig_path(@pig.id))
+    else
+      render.new
+    end
   end
 
   def destroy
