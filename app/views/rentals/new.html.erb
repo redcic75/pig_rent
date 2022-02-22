@@ -1,0 +1,9 @@
+<h1>New rental</h1>
+<h2><%= @pig.name %> details reminder</h2>
+<p>Daily cost: <%= @pig.daily_price %> €</p>
+<p>Required space for the pig: <%= @pig.required_space %> m²</p>
+<%= simple_form_for [@pig, @rental] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit %>
+<% end %>

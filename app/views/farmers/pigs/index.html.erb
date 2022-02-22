@@ -1,0 +1,15 @@
+<div class="content-container">
+<h1>hello this is farmers/pigs where farmers can see their own pigs</h1>
+
+<p>with beautiful pig cards</p>
+<p>and beautiful delete and edit buttons on the cards</p>
+
+<ul>
+<% @pigs.each do |pig| %>
+<li><%= pig.name %></li>
+<li><%= pig.eat_capacity %></li>
+<li><%= pig.required_space %></li>
+<li><%= pig.user.email %></li>
+<% end %>
+</ul>
+</div>
