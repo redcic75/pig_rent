@@ -1,5 +1,15 @@
 <h1>Je suis dans la vue pigs#show</h1>
 
 <h2><%= @pig.name %></h2>
-<p><%= @pig.required_space %>m2 of ground required</p>
-<p><%= @pig.name %> can eat <%= @pig.eat_capacity %>/day</p>
+<% if @pig.required_space.nil? %>
+  <p>m2 required not specified for this pig</p>
+<% else %>
+  <p><%= @pig.required_space %>m2 of ground required</p>
+<% end %>
+<% if @pig.eat_capacity.nil? %>
+  <p>This pig can eat ALL THE FOOD</p>
+<% else %>
+  <p><%= @pig.name %> can eat <%= @pig.eat_capacity %>kg/day</p>
+<% end %>
+
+<%= link_to "Rent this pig", new_pig_rental_path(@pig) %>
