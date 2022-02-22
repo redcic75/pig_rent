@@ -2,7 +2,7 @@
 <ul>
   <% @pigs.each do |pig| %>
     <li>
-      <%= pigs.name %>
+      <%= link_to pig.name, pig_path(pig) %>
     </li>
     <% end %>
 </ul>
