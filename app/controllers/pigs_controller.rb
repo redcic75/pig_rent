@@ -3,5 +3,6 @@ class PigsController < ApplicationController
   end
 
   def show
+    @pig = Pig.find(params[:id])
   end
 end
