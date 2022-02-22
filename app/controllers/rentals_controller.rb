@@ -16,7 +16,6 @@ class RentalsController < ApplicationController
       redirect_to rentals_path
     else
       render :new
-      raise
     end
   end
 
