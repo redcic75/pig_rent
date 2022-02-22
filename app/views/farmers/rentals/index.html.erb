@@ -1,0 +1,10 @@
+<h1>Je suis sur la vue farmers/rentals#index</h1>
+
+<ul>
+  <% @rentals.each do |rental| %>
+    <li>
+      <%= rental.pig.name.capitalize %> <br>
+      Rental time : <%= rental.start_date %> to <%= rental.end_date %>
+    </li>
+  <% end %>
+</ul>
