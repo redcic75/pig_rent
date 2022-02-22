@@ -1,1 +1,6 @@
 // Specific CSS for your home-page
+.pigs-list-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
