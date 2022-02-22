@@ -4,7 +4,8 @@
   <% @rentals.each do |rental| %>
     <li>
       <%= rental.pig.name.capitalize %> <br>
-      Rental time : <%= rental.start_date %> to <%= rental.end_date %>
+      Rental time : <%= rental.start_date %> to <%= rental.end_date %> <br>
+      Status : <%= rental.status %>
     </li>
   <% end %>
 </ul>
