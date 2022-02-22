@@ -12,7 +12,7 @@ class Farmers::PigsController < ApplicationController
     if @pig.save
       redirect_to(farmers_pig_path(@pig.id))
     else
-      render.new
+      render :new
     end
   end
 
@@ -25,7 +25,7 @@ class Farmers::PigsController < ApplicationController
     if @pig.update(pig_params)
       redirect_to(farmers_pig_path(@pig.id))
     else
-      render.new
+      render :new
     end
   end
 
