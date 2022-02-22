@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  namespace :farmer do
+  namespace :farmers do
     resources :pigs, except: [:show]
     resources :rentals, only: [:index]
   end
