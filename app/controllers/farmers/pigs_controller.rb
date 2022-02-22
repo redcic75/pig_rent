@@ -8,8 +8,12 @@ class Farmers::PigsController < ApplicationController
 
   def create
     @pig = Pig.new(pig_params)
-    @pig.save
-    redirect_to(pig_path(@pig.id))
+    @pig.user_id = current_user.id
+    if @pig.save
+      redirect_to(farmers_pig_path(@pig.id))
+    else
+      render.new
+    end
   end
 
   def edit
@@ -19,7 +23,7 @@ class Farmers::PigsController < ApplicationController
   def update
     @pig = Pig.find(params[:id])
     @pig.update(pig_params)
-    redirect_to(pig_path(@pig.id))
+    redirect_to(farmers_pig_path(@pig.id))
   end
 
   def destroy
