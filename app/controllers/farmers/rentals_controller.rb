@@ -1,5 +1,5 @@
 class Farmers::RentalsController < ApplicationController
   def index
-    @rentals = Rental.all
+    @rentals = Rental.where(user: current_user)
   end
 end
