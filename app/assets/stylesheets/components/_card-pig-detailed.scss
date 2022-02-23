@@ -1,0 +1,40 @@
+.card-pig-detailed {
+  margin: 30px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-pig-detailed > img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-pig-detailed h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  padding: 4px;
+}
+
+.card-pig-detailed p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  padding: 4px;
+}
+
+
+.card-pig-detailed .card-pig-detailed-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-pig-detailed .card-pig-detailed-pricing {
+  font-size: 24px;
+  color: #9F4A54;
+}
