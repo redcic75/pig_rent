@@ -37,7 +37,7 @@ class Farmers::PigsController < ApplicationController
   private
 
   def pig_params
-    params.require(:pig).permit(:name, :required_space, :eat_capacity, :daily_price, photos: [])
+    params.require(:pig).permit(:name, :required_space, :eat_capacity, :daily_price, :active, photos: [])
   end
 
   def set_pig
