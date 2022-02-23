@@ -1,13 +1,13 @@
 <div class="content-container">
 
 
-  <h1 class="show-title"> Here are the details for <%= @pig.name.capitalize %> from   <%= @pig.user.first_name %>'s farm</h1>
+  <h1 class="show-title"> <%= @pig.name.capitalize %> from   <%= @pig.user.first_name %>'s farm</h1>
 
   <div class="card-pig-detailed">
     <% if @pig.photos.blank? %>
       <%= image_tag "default-pig.jpg" %>
     <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+      <%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>
     <% end %>
     <div class="card-pig-detailed-infos">
       <div>
@@ -17,8 +17,8 @@
       </div>
       <h2 class="card-pig-detailed-pricing"><%= @pig.daily_price %>€/day</h2>
     </div>
+    <%= link_to "Pick this pig", new_pig_rental_path(@pig), class: "btn btn-flat mb-2 ms-2" %>
   </div>
   <div class="btn-centered">
-    <%= link_to "Pick this pig", new_pig_rental_path(@pig), class: "btn btn-flat" %>
   </div>
 </div>
