@@ -1,15 +1,21 @@
 <div class="content-container">
-<h1>hello this is farmers/pigs where farmers can see their own pigs</h1>
+  <h1>hello this is farmers/pigs where farmers can see their own pigs</h1>
 
-<p>with beautiful pig cards</p>
-<p>and beautiful delete and edit buttons on the cards</p>
+  <p>with beautiful pig cards</p>
+  <p>and beautiful delete and edit buttons on the cards</p>
 
-<ul>
-<% @pigs.each do |pig| %>
-<li><%= pig.name %></li>
-<li><%= pig.eat_capacity %></li>
-<li><%= pig.required_space %></li>
-<li><%= pig.user.email %></li>
-<% end %>
-</ul>
+  <ul>
+    <% @pigs.each do |pig| %>
+      <li><h3><%= pig.name %></h3></li>
+      <li><%= pig.eat_capacity %></li>
+      <li><%= pig.required_space %></li>
+      <li><%= pig.user.email %></li>
+      <li><%= link_to 'edit', edit_farmers_pig_path(pig) %></li>
+      <li><%= link_to 'delete', farmers_pig_path(pig), method: :delete %></li>
+      <p>-------------------------------------</p>
+    <% end %>
+  </ul>
 </div>
+
+<%= link_to 'homepage', pigs_path%>
+<%= link_to "new pig", new_farmers_pig_path %>

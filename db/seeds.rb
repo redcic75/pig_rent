@@ -30,7 +30,7 @@ puts "Creating 4 rentals"
 
 Rental.create(user: carole, pig: bertrand, start_date: Date.yesterday, end_date: Date.today, status: "pending")
 Rental.create(user: cedric, pig: boris, start_date: Date.today, end_date: Date.tomorrow, status: "accepted")
-Rental.create(user: cedric, pig: barbara, start_date: Date.yesterday, end_date: Date.today, status: "declined")
+Rental.create(user: cedric, pig: barbara, start_date: Date.yesterday, end_date: Date.today, status: "rejected")
 Rental.create(user: marion, pig: bernadette, start_date: Date.today, end_date: Date.tomorrow, status: "pending")
 
 puts "Creations done"
