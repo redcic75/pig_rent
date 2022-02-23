@@ -5,4 +5,6 @@ class Pig < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 3 }
   validates :daily_price, presence: true, numericality: { only_integer: true }
+
+  has_many_attached :photos
 end

@@ -8,15 +8,15 @@ puts "DB cleaned"
 
 puts "Creating 4 users"
 
-gala = User.create(email: 'gala@mail.com', password: "azerty")
-marion = User.create(email: 'marion@mail.com', password: "marion")
-carole = User.create(email: 'carole@mail.com', password: "carole")
-cedric = User.create(email: 'cedric@mail.com', password: "cedric")
+# gala = User.create(email: 'gala@mail.com', password: "azerty")
+# marion = User.create(email: 'marion@mail.com', password: "marion")
+# carole = User.create(email: 'carole@mail.com', password: "carole")
+# cedric = User.create(email: 'cedric@mail.com', password: "cedric")
 
-# User.create(email: 'gala@mail.com', password: "azerty", farmer: true, address: "Bourret", first_name: "Gala", last_name: "Thevenet")
-# User.create(email: 'marion@mail.com', password: "marion", farmer: false, address: "Montauban", first_name: "Marion", last_name: "Santos")
-# User.create(email: 'carole@mail.com', password: "carole", farmer: false, address: "Castres-Gironde", first_name: "Carole", last_name: "Chéné")
-# User.create(email: 'cedric@mail.com', password: "cedric", farmer: true, address: "Mérignac", first_name: "Cédrir", last_name: "Louyot")
+gala = User.create(email: 'gala@mail.com', password: "azerty", farmer: true, address: "Bourret", first_name: "Gala", last_name: "Thevenet")
+marion = User.create(email: 'marion@mail.com', password: "marion", farmer: false, address: "Montauban", first_name: "Marion", last_name: "Santos")
+carole = User.create(email: 'carole@mail.com', password: "carole", farmer: false, address: "Castres-Gironde", first_name: "Carole", last_name: "Chéné")
+cedric = User.create(email: 'cedric@mail.com', password: "cedric", farmer: true, address: "Mérignac", first_name: "Cédrir", last_name: "Louyot")
 
 
 puts "Creating 4 pigs"
@@ -30,7 +30,7 @@ puts "Creating 4 rentals"
 
 Rental.create(user: carole, pig: bertrand, start_date: Date.yesterday, end_date: Date.today, status: "pending")
 Rental.create(user: cedric, pig: boris, start_date: Date.today, end_date: Date.tomorrow, status: "accepted")
-Rental.create(user: cedric, pig: barbara, start_date: Date.yesterday, end_date: Date.today, status: "declined")
+Rental.create(user: cedric, pig: barbara, start_date: Date.yesterday, end_date: Date.today, status: "rejected")
 Rental.create(user: marion, pig: bernadette, start_date: Date.today, end_date: Date.tomorrow, status: "pending")
 
 puts "Creations done"
