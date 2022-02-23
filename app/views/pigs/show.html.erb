@@ -1,15 +1,25 @@
-<h1>Je suis dans la vue pigs#show</h1>
+<div class="content-container">
 
-<h2><%= @pig.name %></h2>
-<% if @pig.required_space.nil? %>
-  <p>m2 required not specified for this pig</p>
-<% else %>
-  <p><%= @pig.required_space %>m2 of ground required</p>
-<% end %>
-<% if @pig.eat_capacity.nil? %>
-  <p>This pig can eat ALL THE FOOD</p>
-<% else %>
-  <p><%= @pig.name %> can eat <%= @pig.eat_capacity %>kg/day</p>
-<% end %>
 
-<%= link_to "Rent this pig", new_pig_rental_path(@pig) %>
+  <h1 class="show-title"> Here are the details for <%= @pig.name.capitalize %> from   <%= @pig.user.first_name %>'s farm</h1>
+
+  <div class="card-pig-detailed">
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
+    <div class="card-pig-detailed-infos">
+      <div>
+        <h2><%= @pig.name.capitalize %></h2>
+        <p><strong><%= @pig.required_space %>m2</strong> of ground required</p>
+        <p><%= @pig.name %> can eat <strong><%= @pig.eat_capacity %>kg/day</strong></p>
+      </div>
+      <h2 class="card-pig-detailed-pricing"><%= @pig.daily_price %>€/day</h2>
+    </div>
+  </div>
+  <div class="btn-centered">
+    <%= link_to "Pick this pig", new_pig_rental_path(@pig), class: "btn btn-flat" %>
+  </div>
+</div>
+
