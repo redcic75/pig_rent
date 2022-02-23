@@ -8,7 +8,11 @@
 
 <div class="content-container pigs-list-container">
   <div class="card-pig">
-    <img src="https://i0.wp.com/groingroin.org/wp-content/uploads/2019/12/aider-animaux-bernadette-03.jpg?fit=750%2C400&ssl=1" />
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-infos">
       <div>
         <h2>Bernadette</h2>
@@ -19,7 +23,11 @@
     </div>
   </div>
   <div class="card-pig">
-    <img src="https://i0.wp.com/groingroin.org/wp-content/uploads/2019/12/aider-animaux-bernadette-03.jpg?fit=750%2C400&ssl=1" />
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-infos">
       <div>
         <h2>Bernadette</h2>
@@ -30,7 +38,11 @@
     </div>
   </div>
   <div class="card-pig">
-    <img src="https://i0.wp.com/groingroin.org/wp-content/uploads/2019/12/aider-animaux-bernadette-03.jpg?fit=750%2C400&ssl=1" />
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-infos">
       <div>
         <h2>Bernadette</h2>
@@ -41,7 +53,11 @@
     </div>
   </div>
   <div class="card-pig">
-    <img src="https://i0.wp.com/groingroin.org/wp-content/uploads/2019/12/aider-animaux-bernadette-03.jpg?fit=750%2C400&ssl=1" />
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-infos">
       <div>
         <h2>Bernadette</h2>
@@ -52,7 +68,11 @@
     </div>
   </div>
   <div class="card-pig">
-    <img src="https://i0.wp.com/groingroin.org/wp-content/uploads/2019/12/aider-animaux-bernadette-03.jpg?fit=750%2C400&ssl=1" />
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-infos">
       <div>
         <h2>Bernadette</h2>
@@ -63,7 +83,11 @@
     </div>
   </div>
   <div class="card-pig">
-    <img src="https://i0.wp.com/groingroin.org/wp-content/uploads/2019/12/aider-animaux-bernadette-03.jpg?fit=750%2C400&ssl=1" />
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-infos">
       <div>
         <h2>Bernadette</h2>
@@ -74,7 +98,11 @@
     </div>
   </div>
   <div class="card-pig">
-    <img src="https://i0.wp.com/groingroin.org/wp-content/uploads/2019/12/aider-animaux-bernadette-03.jpg?fit=750%2C400&ssl=1" />
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-infos">
       <div>
         <h2>Bernadette</h2>
@@ -85,7 +113,11 @@
     </div>
   </div>
   <div class="card-pig">
-    <img src="https://i0.wp.com/groingroin.org/wp-content/uploads/2019/12/aider-animaux-bernadette-03.jpg?fit=750%2C400&ssl=1" />
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-infos">
       <div>
         <h2>Bernadette</h2>
@@ -96,7 +128,26 @@
     </div>
   </div>
   <div class="card-pig">
-    <img src="https://i0.wp.com/groingroin.org/wp-content/uploads/2019/12/aider-animaux-bernadette-03.jpg?fit=750%2C400&ssl=1" />
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
+    <div class="card-pig-infos">
+      <div>
+        <h2>Bernadette</h2>
+        <p>Cute black female that loves carrots.</p>
+      </div>
+      <h2 class="card-pig-pricing">25€/day</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
+    </div>
+  </div>
+  <div class="card-pig">
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-infos">
       <div>
         <h2>Bernadette</h2>

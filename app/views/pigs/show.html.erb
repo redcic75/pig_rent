@@ -3,7 +3,11 @@
   <h1 class="show-title"> Here are the details for <%= @pig.name.capitalize %> from   <%= @pig.user.first_name %>'s farm</h1>
 
   <div class="card-pig-detailed">
-    <img src="<%= cl_image_tag @pig.photo.key, height: 300, width: 400, crop: :fill %>"/>
+    <% if @pig.photos.blank? %>
+      <img src="default-pig.jpg" alt="">
+    <% else %>
+      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+    <% end %>
     <div class="card-pig-detailed-infos">
       <div>
         <h2><%= @pig.name.capitalize %></h2>
