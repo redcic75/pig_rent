@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2022_02_23_102033) do
+ActiveRecord::Schema.define(version: 2022_02_23_112956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +51,7 @@ ActiveRecord::Schema.define(version: 2022_02_23_102033) do
     t.integer "eat_capacity"
     t.bigint "user_id", null: false
     t.integer "daily_price"
+    t.boolean "active"
     t.index ["user_id"], name: "index_pigs_on_user_id"
   end
 
