@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :rentals, dependent: :nullify
   has_many :pigs, through: :rentals
   has_many :pigs, dependent: :destroy
+
+  validates :address, presence: true
 end
