@@ -11,7 +11,7 @@
         <%# <% link_to pig_path(pig) do %>
           <div class="card-pig">
             <% if pig.photos.blank? %>
-              <img src="/assets/default-pig.jpg" alt="">
+              <%= image_tag "default-pig.jpg" %>
             <% else %>
               <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill %>
             <% end %>

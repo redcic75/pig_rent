@@ -5,7 +5,7 @@
 
   <div class="card-pig-detailed">
     <% if @pig.photos.blank? %>
-      <img src="/assets/default-pig.jpg" alt="">
+      <%= image_tag "default-pig.jpg" %>
     <% else %>
       <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
     <% end %>
