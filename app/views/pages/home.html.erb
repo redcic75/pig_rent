@@ -7,154 +7,31 @@
 </div>
 
 <div class="content-container pigs-list-container">
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
+  <ul>
+    <% @pigs.each do |pig| %>
+      <li>
+        <% link_to pig_path(pig) do %>
+          <div class="card-pig">
+            <% if pig.photos.blank? %>
+              <img src="default-pig.jpg" alt="">
+            <% else %>
+              <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+            <div class="card-pig-infos">
+              <div>
+                <h2><%= pig.name %></h2>
+                <p><strong><%= pig.eat_capacity %></strong>kg/day</p>
+              </div>
+              <h2 class="card-pig-pricing">25€/day</h2>
+              <% if pig.user.photo.nil? %>
+                <img src="user.png" alt="">
+              <% else %>
+                <%= cl_image_tag pig.user.photo.key, height: 300, width: 400, crop: :fill, class: "card-pig-user avatar-bordered" %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </li>
     <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
-    <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
-    <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
-    <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
-    <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
-    <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
-    <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
-    <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
-    <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
-  <div class="card-pig">
-    <% if @pig.photos.blank? %>
-      <img src="default-pig.jpg" alt="">
-    <% else %>
-      <img src="<%= cl_image_tag @pig.photos.first.key, height: 300, width: 400, crop: :fill %>"/>
-    <% end %>
-    <div class="card-pig-infos">
-      <div>
-        <h2>Bernadette</h2>
-        <p>Cute black female that loves carrots.</p>
-      </div>
-      <h2 class="card-pig-pricing">25€/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-pig-user avatar-bordered" />
-    </div>
-  </div>
+  </ul>
 </div>

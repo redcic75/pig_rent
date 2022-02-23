@@ -1,8 +1,1 @@
-<h1>Je suis dans la vue pigs#index</h1>
-<ul>
-  <% @pigs.each do |pig| %>
-    <li>
-      <%= link_to pig.name, pig_path(pig) %>
-    </li>
-    <% end %>
-</ul>
+<%= render :home %>
