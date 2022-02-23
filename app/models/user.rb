@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :pigs, through: :rentals
   has_many :pigs, dependent: :destroy
 
-
   has_one_attached :photo
 
   validates :address, presence: true
