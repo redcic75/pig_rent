@@ -1,20 +1,12 @@
 <div class="content-container">
-  <h1>hello this is farmers/pigs where farmers can see their own pigs</h1>
+  <h1>My Pigs</h1>
 
-  <p>with beautiful pig cards</p>
-  <p>and beautiful delete and edit buttons on the cards</p>
 
   <ul>
     <% @pigs.each do |pig| %>
-      <%# <li><h3><%= pig.name %></h3></li>
-      <%# <li><%= pig.eat_capacity %></li>
-      <%# <li><%= pig.required_space %></li>
-      <%# <li><%= pig.user.email %></li>
-      <%# <li><%= link_to 'edit', edit_farmers_pig_path(pig) %></li>
-      <%# <li><%= link_to 'delete', farmers_pig_path(pig), method: :delete %></li>
-      <div class="card-pig">
+      <div class="card-pig mb-5">
             <% if pig.photos.blank? %>
-              <img src="default-pig.jpg" alt="">
+              <%= image_tag "default-pig.jpg" %>
             <% else %>
               <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill %>
             <% end %>
@@ -25,19 +17,12 @@
                 <p><strong><%= pig.required_space %></strong>m2 required</p>
               </div>
               <h2 class="card-pig-pricing">25€/day</h2>
-              <% if pig.user.photo.nil? %>
-                <img src="user.png" alt="">
-              <% else %>
-                <%= cl_image_tag pig.user.photo.key, height: 300, width: 400, crop: :fill, class: "card-pig-user avatar-bordered" %>
-              <% end %>
             </div>
-            <li><%= link_to 'edit', edit_farmers_pig_path(pig) %></li>
-            <li><%= link_to 'delete', farmers_pig_path(pig), method: :delete %></li>
+            <li><%= link_to 'edit', edit_farmers_pig_path(pig), class: "ms-3" %></li>
+            <li><%= link_to 'delete', farmers_pig_path(pig), method: :delete, class: "ms-3" %></li>
           </div>
-        <%# <% end %>
     <% end %>
   </ul>
-</div>
-
-<%= link_to 'homepage', pigs_path%>
+  <%= link_to 'homepage', pigs_path%>
 <%= link_to "new pig", new_farmers_pig_path %>
+</div>
