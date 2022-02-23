@@ -36,12 +36,6 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:rental).permit(:status)
-  end
-
-  private
-
-  def rental_params
     params.require(:rental).permit(:user, :pig, :start_date, :end_date, :status)
   end
 end
