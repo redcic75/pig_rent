@@ -1,28 +1,31 @@
 <div class="content-container">
   <h1>My Pigs</h1>
 
-
-  <ul>
+  <div class="pigs-list-container">
     <% @pigs.each do |pig| %>
       <div class="card-pig mb-5">
-            <% if pig.photos.blank? %>
-              <%= image_tag "default-pig.jpg" %>
-            <% else %>
-              <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-            <div class="card-pig-infos">
-              <div>
-                <h2><%= pig.name %></h2>
-                <p><strong><%= pig.eat_capacity %></strong>kg/day</p>
-                <p><strong><%= pig.required_space %></strong>m2 required</p>
-              </div>
-              <h2 class="card-pig-pricing">25€/day</h2>
-            </div>
-            <li><%= link_to 'edit', edit_farmers_pig_path(pig), class: "ms-3" %></li>
-            <li><%= link_to 'delete', farmers_pig_path(pig), method: :delete, class: "ms-3" %></li>
+        <% if pig.photos.blank? %>
+          <%= image_tag "default-pig.jpg" %>
+        <% else %>
+          <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <div class="card-pig-infos">
+          <div>
+            <h2><%= pig.name %></h2>
+            <p><strong><%= pig.eat_capacity %></strong>kg/day</p>
+            <p><strong><%= pig.required_space %></strong>m2 required</p>
           </div>
+          <h2 class="card-pig-pricing">25€/day</h2>
+        </div>
+          <%= link_to edit_farmers_pig_path(pig), class: "ms-3" do %>
+            <i class="fa-solid fa-pen"></i>
+          <% end %>
+          <%= link_to farmers_pig_path(pig), method: :delete, class: "ms-3" do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
+      </div>
     <% end %>
-  </ul>
-  <%= link_to 'homepage', pigs_path%>
-<%= link_to "new pig", new_farmers_pig_path %>
+  </div>
+
+  <%= link_to "Add a pig", new_farmers_pig_path %>
 </div>
