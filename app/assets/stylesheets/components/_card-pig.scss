@@ -80,3 +80,32 @@
   margin: 6px 0px 0px 0px;
   padding-top: 10px;
 }
+
+.card-pig-available .card-pig-available-true {
+  position: absolute;
+  right: 282px;
+  top: -190px;
+  background-color: #7FB069;
+  color: white;
+  font-weight: 400;
+  border-radius: 5px;
+  padding: 1px 6px;
+  box-shadow: 1px 1px 1px lightgray;
+}
+
+.card-pig-available .card-pig-available-false {
+  position: absolute;
+  right: 300px;
+  top: -190px;
+  background-color: #9F4A54;
+  color: white;
+  font-weight: 400;
+  border-radius: 5px;
+  padding: 1px 6px;
+  box-shadow: 1px 1px 1px lightgray;
+
+}
+
+.rating-zero {
+  display: none;
+}
