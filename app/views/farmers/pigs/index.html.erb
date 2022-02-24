@@ -8,6 +8,13 @@
 
     <% @pigs.each do |pig| %>
       <div class="card-pig mb-5">
+        <div class="card-pig-available">
+          <% if pig.active %>
+            <div class="card-pig-available-true">available</div>
+          <% else %>
+            <div class="card-pig-available-false">inactive</div>
+          <% end %>
+        </div>
         <%= link_to pig_path(pig) do %>
           <% if pig.photos.blank? %>
             <%= image_tag "default-pig.jpg", class: "pig-pic" %>
