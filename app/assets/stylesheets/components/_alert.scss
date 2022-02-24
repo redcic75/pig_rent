@@ -1,17 +1,21 @@
 .alert {
   top: 80px;
   position: fixed;
+  padding: 8px;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 1000;
   display: flex;
   align-items: center;
+  background-color: #F8AD9D;
+  // background-color: #9F4A54;
+  color: rgba(0, 0, 0, .6);
 }
 
 .close {
   border: none;
   background: rgba(0,0,0,0);
   font-size: 40px;
-  opacity: .5;
+  color: rgba(0, 0, 0, .6);
   margin-right: 16px;
 }
