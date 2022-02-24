@@ -14,6 +14,14 @@
     width: 100%;
     object-fit: cover;
   }
+
+  .edit-icon:hover {
+    color: orange;
+  }
+
+  .delete-icon:hover {
+    color: red;
+  }
 }
 
 .card-pig h2 {
