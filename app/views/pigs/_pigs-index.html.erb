@@ -24,6 +24,7 @@
                 <p>No limit stomach</p>
               <% end %>
             </div>
+            <div class="card_pig_rating"><%= pig.rating %>
             <h2 class="card-pig-pricing"><%= pig.daily_price %> €/day</h2>
             <div class="avatar">
               <% unless pig.user.photo.key.nil? %>

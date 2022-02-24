@@ -23,6 +23,13 @@
             <p>I can go in any garden</p>
           <% end %>
       </div>
+      <div class="card_pig_rating"><%= @pig.rating %>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </div>
       <h2 class="card-pig-detailed-pricing"><%= @pig.daily_price %> €/day</h2>
     </div>
     <%= link_to "Pick this pig", new_pig_rental_path(@pig), class: "btn btn-flat mb-2 ms-2" %>
