@@ -1,9 +1,9 @@
 require 'open-uri'
 
 puts "Cleaning the DB"
-Rental.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
-Pig.destroy_all if Rails.env.development?
+Rental.destroy_all
+User.destroy_all
+Pig.destroy_all
 
 puts "DB cleaned"
 
