@@ -1,11 +1,40 @@
-<h1>Je suis sur la vue farmers/rentals#index</h1>
-
-<ul>
-  <% @rentals.each do |rental| %>
-    <li>
-      <%= rental.pig.name.capitalize %> <br>
-      Rental time : <%= rental.start_date %> to <%= rental.end_date %> <br>
-      Status : <%= rental.status %>
-    </li>
-  <% end %>
-</ul>
+<div class="content-container">
+    <h1 class="show-title">My rentals</h1>
+  <div class="d-flex justify-content-between align-items-center my-3">
+    <div class="pigs-list-container">
+      <% @rentals.each do |rental| %>
+        <div class="card-customer-rental">
+          <% if rental.pig.photos.blank? %>
+            <%= image_tag "default-pig.jpg", class: "pig-pic" %>
+          <% else %>
+            <%= cl_image_tag rental.pig.photos.first.key, height: 300, width: 400, crop: :fill, class: "pig-pic" %>
+          <% end %>
+            <div class="card-customer-rental-infos">
+              <div>
+                <h2><%= rental.pig.name.capitalize %></h2>
+                  <p><%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %> - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %></p>
+                <% if rental.end_date < Date.yesterday %>
+                  <p><%= "Past rental" %></p>
+                <% elsif rental.status == "pending" %>
+                  <p class="yellow-status"><%= rental.status %></p>
+                <% elsif rental.status == "rejected" %>
+                  <p class= "red-status"><%= rental.status %></p>
+                <% elsif rental.status == "approved" %>
+                  <p class="green-status"><%= rental.status %></p>
+                <% end %>
+              </div>
+              <h2 class="card-customer-rental-pricing">
+                <%= rental.pig.daily_price * (rental.end_date - rental.start_date).to_i %> €</h2>
+              <div class="avatar">
+                <% unless rental.pig.user.photo.key.nil? %>
+                  <%= cl_image_tag rental.pig.user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
+                  <img src="/assets/user.png" class="avatar dropdown-toggle" id= "navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                <% end %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
