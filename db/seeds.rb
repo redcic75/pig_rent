@@ -20,7 +20,7 @@ cedric.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upl
 
 puts "Creating 4 pigs"
 
-bernadette = Pig.create(name: 'bernadette', required_space: 200, eat_capacity: 2, user: gala, daily_price: 10, rating: 3)
+bernadette = Pig.create(name: 'bernadette', required_space: 200, eat_capacity: 2, user: gala, daily_price: 10, rating: 3, active: true)
 bernadette.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Cochons/images_ry5wnp.jpg'), filename: 'images_ry5wnp.jpg', content_type: 'image/jpg')
 
 boris = Pig.create(name: 'boris', required_space: 100, eat_capacity: 1, user: gala, daily_price: 15, rating: 4)
@@ -34,7 +34,7 @@ bertrand = Pig.create(name: 'bertrand', user: marion, daily_price: 20)
 baptiste = Pig.create(name: 'baptiste', required_space: 100, eat_capacity: 1, user: marion, daily_price: 17, rating: 5)
 baptiste.photos.attach(io: URI.open('https://res.cloudinary.com/de2xlu7kn/image/upload/v1645623146/Cochons/cochon3_c2v1lz.jpg'), filename: 'cochon3_c2v1lz.jpg', content_type: 'image/jpg')
 
-billy = Pig.create(name: 'billy', required_space: 250, eat_capacity: 2, user: cedric, daily_price: 10, rating: 2)
+billy = Pig.create(name: 'billy', required_space: 250, eat_capacity: 2, user: cedric, daily_price: 10, rating: 2, active: true)
 billy.photos.attach(io: URI.open('https://res.cloudinary.com/de2xlu7kn/image/upload/v1645623146/Cochons/cochon2_bef3gw.jpg'), filename: 'cochon2_bef3gw.jpg', content_type: 'image/jpg')
 
 barnabe = Pig.create(name: 'barnabe', required_space: 50, user: marion, daily_price: 10, rating: 4)
