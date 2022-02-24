@@ -15,6 +15,13 @@
             <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill, class: "pig-pic" %>
           <% end %>
           <div class="card-pig-infos">
+            <div class="card-pig-available">
+              <% if pig.active %>
+                <div class="card-pig-available-true">available</div>
+              <% else %>
+                <div class="card-pig-available-false">rented</div>
+              <% end %>
+            </div>
             <div>
               <h2><%= pig.name.capitalize %></h2>
               <% if pig.eat_capacity %>

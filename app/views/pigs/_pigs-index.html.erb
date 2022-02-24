@@ -23,6 +23,13 @@
           <% end %>
           <div class="card-pig-infos">
             <div>
+              <div class="card-pig-available">
+                <% if pig.active %>
+                   <div class="card-pig-available-true">available</div>
+                <% else %>
+                  <div class="card-pig-available-false">rented</div>
+                <% end %>
+              </div>
               <h2><%= pig.name.capitalize %></h2>
               <% if pig.eat_capacity %>
                 <p><strong><%= pig.eat_capacity %></strong> kg/day</p>
@@ -31,7 +38,15 @@
               <% end %>
             </div>
             <div class="card_pig_rating">
-              <% if pig.rating == 1 %>
+              <% if pig.rating == nil %>
+                <div class="rating-zero>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                </div>
+              <% elsif pig.rating == 1 %>
                 <span class="fa fa-star"></span>
                 <span class="fa-regular fa-star"></span>
                 <span class="fa-regular fa-star"></span>
