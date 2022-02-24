@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :rentals, only: [:new, :create]
   end
 
-  resources :rentals, only: [:index, :edit, :update]
+  resources :rentals, only: [:index, :edit, :update, :destroy]
 end

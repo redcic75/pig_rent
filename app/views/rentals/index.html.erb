@@ -24,6 +24,11 @@
                 <% elsif rental.status == "accepted" %>
                   <p class="green-status"><%= rental.status %></p>
                 <% end %>
+                <div>
+                  <%= link_to rental_path(rental), method: :delete, class: "delete-icon ms-3" do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
+                </div>
               </div>
               <h2 class="card-customer-rental-pricing">
               <%= rental.pig.daily_price * (rental.end_date - rental.start_date).to_i %> €</h2>
