@@ -24,19 +24,19 @@
           <% end %>
       </div>
       <div class="card-pig-detailed-rating">
-        <% if pig.rating == 0 %>
-                <div class="rating-zero">
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-              <% elsif pig.rating == 1 %>
-                <span class="fa fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
+        <% if @pig.rating == 0 %>
+          <div class="rating-zero">
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+        <% elsif @pig.rating == 1 %>
+          <span class="fa fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
         <% elsif @pig.rating == 2 %>
           <span class="fa fa-star"></span>
           <span class="fa fa-star"></span>
