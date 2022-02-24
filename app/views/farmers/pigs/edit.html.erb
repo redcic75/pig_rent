@@ -10,6 +10,8 @@
       <%= f.input :required_space, placeholder: "Required space in m2" %>
       <br>
       <%= f.input :eat_capacity, placeholder: "Eat capacity in kg" %>
+      <br>
+      <%= f.input :active, as: :boolean, label: "I'm available!" %>
     </div>
 
     <div class="form-input">
@@ -20,12 +22,9 @@
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     </div>
 
-    <%# <%= f.input :active, as: :boolean, label: "I'm available!" %> %>
-
     <div class="form-button">
       <%= f.submit "Modify my pig", class: "btn btn-flat" %>
     </div>
   <% end %>
 </div>
 
-<%= link_to 'homepage', pigs_path%>
