@@ -6,6 +6,12 @@
   </div>
 </div>
 
+<div class= "content-container" style="width: 80%; height: 350px; margin-bottom: 35px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 <div class="content-container pigs-list-container">
     <% @pigs.each do |pig| %>
       <%= link_to pig_path(pig) do %>
