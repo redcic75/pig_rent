@@ -17,6 +17,10 @@
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
+
+  &:hover {
+    color: #F8AD9D;
+  }
 }
 .footer-links a:hover {
   opacity: 1;

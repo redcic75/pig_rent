@@ -12,8 +12,16 @@
     <div class="card-pig-detailed-infos">
       <div>
         <h2><%= @pig.name.capitalize %></h2>
-        <p><strong><%= @pig.required_space %></strong> m² of ground required</p>
-        <p><%= @pig.name.capitalize %> can eat <strong><%= @pig.eat_capacity %></strong> kg/day</p>
+          <% if @pig.eat_capacity %>
+            <p><strong><%= @pig.eat_capacity %></strong> kg/day</p>
+          <% else %>
+            <p>I'm a bottomless stomach</p>
+          <% end %>
+          <% if @pig.required_space %>
+            <p><strong><%= @pig.required_space %></strong> m2 required</p>
+          <% else %>
+            <p>I can go in any garden</p>
+          <% end %>
       </div>
       <h2 class="card-pig-detailed-pricing"><%= @pig.daily_price %> €/day</h2>
     </div>
