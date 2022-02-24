@@ -1,6 +1,6 @@
 class RentalsController < ApplicationController
   def index
-    @rentals = Rental.includes(:pig).where(pig: {user: current_user})
+    @rentals = Rental.where(user: current_user)
   end
 
   def new
