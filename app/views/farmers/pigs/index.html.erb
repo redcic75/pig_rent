@@ -1,28 +1,61 @@
 <div class="content-container">
-  <h1>My Pigs</h1>
+  <div class="d-flex justify-content-between align-items-center my-3">
+    <h1 class="show-title">My Pigs</h1>
+    <%= link_to "Add a pig", new_farmers_pig_path, class:"btn btn-flat" %>
+  </div>
 
+  <div class="pigs-list-container">
 
-  <ul>
     <% @pigs.each do |pig| %>
       <div class="card-pig mb-5">
-            <% if pig.photos.blank? %>
-              <%= image_tag "default-pig.jpg" %>
-            <% else %>
-              <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-            <div class="card-pig-infos">
-              <div>
-                <h2><%= pig.name %></h2>
-                <p><strong><%= pig.eat_capacity %></strong>kg/day</p>
-                <p><strong><%= pig.required_space %></strong>m2 required</p>
-              </div>
-              <h2 class="card-pig-pricing">25€/day</h2>
+        <%= link_to pig_path(pig) do %>
+          <% if pig.photos.blank? %>
+            <%= image_tag "default-pig.jpg", class: "pig-pic" %>
+          <% else %>
+            <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill, class: "pig-pic" %>
+          <% end %>
+          <div class="card-pig-infos">
+            <div>
+              <h2><%= pig.name.capitalize %></h2>
+              <% if pig.eat_capacity %>
+                <p><strong><%= pig.eat_capacity %></strong> kg/day</p>
+              <% else %>
+                <p>No limit stomach</p>
+              <% end %>
+              <% if pig.required_space %>
+                <p><strong><%= pig.required_space %></strong> m2 required</p>
+              <% else %>
+                <p>Any garden is ok</p>
+              <% end %>
             </div>
-            <li><%= link_to 'edit', edit_farmers_pig_path(pig), class: "ms-3" %></li>
-            <li><%= link_to 'delete', farmers_pig_path(pig), method: :delete, class: "ms-3" %></li>
+
+            <div class="avatar">
+              <% unless current_user.photo.key.nil? %>
+                <%= cl_image_tag current_user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <img src="/assets/user.png" class="avatar dropdown-toggle" id= "navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+              <% end %>
+            </div>
           </div>
+
+        <% end %>
+
+        <div class="mb-2 d-flex justify-content-between align-items-center">
+          <div>
+            <%= link_to edit_farmers_pig_path(pig), class: "edit-icon ms-3" do %>
+              <i class="fa-solid fa-pen"></i>
+            <% end %>
+            <%= link_to farmers_pig_path(pig), method: :delete, class: "delete-icon ms-3" do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </div>
+          <h2 class="card-pig-pricing pe-2"><%= pig.daily_price %> €/day</h2>
+        </div>
+
+      </div>
+
     <% end %>
-  </ul>
-  <%= link_to 'homepage', pigs_path%>
-<%= link_to "new pig", new_farmers_pig_path %>
+
+  </div>
+
 </div>

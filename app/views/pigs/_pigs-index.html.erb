@@ -6,26 +6,35 @@
   </div>
 </div>
 
-
-
-
 <div class="content-container pigs-list-container">
     <% @pigs.each do |pig| %>
-        <%# <% link_to pig_path(pig) do %>
-          <div class="card-pig">
-            <% if pig.photos.blank? %>
-              <%= image_tag "default-pig.jpg" %>
-            <% else %>
-              <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-            <div class="card-pig-infos">
-              <div>
-                <h2><%= link_to pig.name, pig_path(pig) %></h2>
-                <p><strong><%= pig.eat_capacity %></strong>kg/day</p>
-              </div>
-              <h2 class="card-pig-pricing">25€/day</h2>
+      <%= link_to pig_path(pig) do %>
+        <div class="card-pig">
+          <% if pig.photos.blank? %>
+            <%= image_tag "default-pig.jpg", class: "pig-pic" %>
+          <% else %>
+            <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill, class: "pig-pic" %>
+          <% end %>
+          <div class="card-pig-infos">
+            <div>
+              <h2><%= pig.name.capitalize %></h2>
+              <% if pig.eat_capacity %>
+                <p><strong><%= pig.eat_capacity %></strong> kg/day</p>
+              <% else %>
+                <p>No limit stomach</p>
+              <% end %>
+            </div>
+            <h2 class="card-pig-pricing"><%= pig.daily_price %> €/day</h2>
+            <div class="avatar">
+              <% unless pig.user.photo.key.nil? %>
+                <%= cl_image_tag pig.user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <img src="/assets/user.png" class="avatar dropdown-toggle" id= "navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+              <% end %>
             </div>
           </div>
-        <%# <% end %>
+
+        </div>
+      <% end %>
     <% end %>
 </div>

@@ -2,22 +2,41 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
+  transform: scale(1);
+  transition: transform .3s;
 
-.card-pig > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+    transition: transform .3s;
+  }
+
+  .pig-pic {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .edit-icon:hover {
+    color: #F8AD9D;
+  }
+
+  .delete-icon:hover {
+    // color: #9F4A54;
+    color: red;
+    opacity: .8;
+  }
 }
 
 .card-pig h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: grey;
 }
 
 .card-pig p {
-  font-size: 12px;
+  font-size: 14px;
   opacity: .7;
   margin: 0;
 }
@@ -29,10 +48,6 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  a {
-    text-decoration: none;
-    color: darkgrey;
-  }
 }
 
 .card-pig-infos .card-pig-user {
@@ -41,4 +56,14 @@
   top: -20px;
   width: 40px;
   z-index: 1;
+}
+
+.card-pig-infos {
+  position: relative;
+
+  .avatar {
+    position: absolute;
+    right: 5px;
+    top: -10px;
+  }
 }
