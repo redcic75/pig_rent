@@ -23,7 +23,40 @@
             <p>I can go in any garden</p>
           <% end %>
       </div>
+      <div class="card-pig-detailed-rating">
+        <% if @pig.rating == 1 %>
+          <span class="fa fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+        <% elsif @pig.rating == 2 %>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+        <% elsif @pig.rating == 3 %>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+        <% elsif @pig.rating == 4 %>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa-regular fa-star"></span>
+        <% elsif @pig.rating == 5 %>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        <% end %>
       <h2 class="card-pig-detailed-pricing"><%= @pig.daily_price %> €/day</h2>
+      </div>
     </div>
     <%= link_to "Pick this pig", new_pig_rental_path(@pig), class: "btn btn-flat mb-2 ms-2" %>
   </div>

@@ -24,7 +24,40 @@
                 <p>No limit stomach</p>
               <% end %>
             </div>
+            <div class="card_pig_rating">
+              <% if pig.rating == 1 %>
+                <span class="fa fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 2 %>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 3 %>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 4 %>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 5 %>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              <% end %>
             <h2 class="card-pig-pricing"><%= pig.daily_price %> €/day</h2>
+            </div>
             <div class="avatar">
               <% unless pig.user.photo.key.nil? %>
                 <%= cl_image_tag pig.user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
