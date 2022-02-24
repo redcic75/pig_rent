@@ -12,7 +12,7 @@
 
   <%# Problème dans mon form, je n'arrive pas à ce que le cercle de accepted soit sur la bonne ligne %>
   <%= simple_form_for @rental do |f| %>
-  <%= f.collection_radio_buttons :status, [['accepted', 'accepted'], ['declined', 'declined']], :first, :last %>
+  <%= f.collection_radio_buttons :status, [['accepted', 'accepted'], ['rejected', 'rejected']], :first, :last %>
   <%= f.submit %>
   <% end %>
 </div>

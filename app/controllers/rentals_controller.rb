@@ -1,6 +1,6 @@
 class RentalsController < ApplicationController
   def index
-    @rentals = Rental.where(user: current_user)
+    @rentals = Rental.includes(:pig).where(pig: {user: current_user})
   end
 
   def new
@@ -26,7 +26,8 @@ class RentalsController < ApplicationController
   end
 
   def update
-    if Rental.update(rental_params)
+    @rental = Rental.find(params[:id])
+    if @rental.update(rental_params)
       redirect_to farmers_rentals_path
     else
       render :edit
