@@ -6,26 +6,23 @@
   </div>
 </div>
 
-
-
-
 <div class="content-container pigs-list-container">
     <% @pigs.each do |pig| %>
-        <%# <% link_to pig_path(pig) do %>
-          <div class="card-pig">
-            <% if pig.photos.blank? %>
-              <%= image_tag "default-pig.jpg" %>
-            <% else %>
-              <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-            <div class="card-pig-infos">
-              <div>
-                <h2><%= link_to pig.name, pig_path(pig) %></h2>
-                <p><strong><%= pig.eat_capacity %></strong>kg/day</p>
-              </div>
-              <h2 class="card-pig-pricing">25€/day</h2>
+      <%= link_to pig_path(pig) do %>
+        <div class="card-pig">
+          <% if pig.photos.blank? %>
+            <%= image_tag "default-pig.jpg" %>
+          <% else %>
+            <%= cl_image_tag pig.photos.first.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <div class="card-pig-infos">
+            <div>
+              <h2><%= pig.name %></h2>
+              <p><strong><%= pig.eat_capacity %></strong>kg/day</p>
             </div>
+            <h2 class="card-pig-pricing">25€/day</h2>
           </div>
-        <%# <% end %>
+        </div>
+      <% end %>
     <% end %>
 </div>
