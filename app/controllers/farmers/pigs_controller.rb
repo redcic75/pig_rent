@@ -30,9 +30,7 @@ class Farmers::PigsController < ApplicationController
   end
 
   def destroy
-    deletable = false
-
-    if deletable
+    if @pig.rentals.empty?
       @pig.destroy
     else
       flash[:alert] = "I'm rented, I can't be deleted"
