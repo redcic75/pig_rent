@@ -45,12 +45,13 @@
             </div>
             <div class="card_pig_detailed_rating">
               <% if pig.rating == 0 %>
-                <div class="rating-zero">
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
-                <span class="fa-regular fa-star"></span>
+                <div class="rating-zero-hidden">
+                  <span class="fa-regular fa-star"></span>
+                  <span class="fa-regular fa-star"></span>
+                  <span class="fa-regular fa-star"></span>
+                  <span class="fa-regular fa-star"></span>
+                  <span class="fa-regular fa-star"></span>
+                </div>
               <% elsif pig.rating == 1 %>
                 <span class="fa fa-star"></span>
                 <span class="fa-regular fa-star"></span>
