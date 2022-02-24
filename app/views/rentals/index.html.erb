@@ -1,17 +1,20 @@
 <div class="content-container">
     <h1 class="show-title">My rentals</h1>
-    <div class="pigs-list-container">
-      <% @rentals.each do |rental| %>
-        <div class="card-customer-rental">
-          <% if rental.pig.photos.blank? %>
-            <%= image_tag "default-pig.jpg", class: "pig-pic" %>
-          <% else %>
-            <%= cl_image_tag rental.pig.photos.first.key, height: 300, width: 400, crop: :fill, class: "pig-pic" %>
-          <% end %>
+    <% if @rentals.empty? %>
+      <h2 class="d-flex justify-content-center mt-5">You have no rentals yet </h2>
+    <% else %>
+      <div class="pigs-list-container">
+        <% @rentals.each do |rental| %>
+          <div class="card-customer-rental">
+            <% if rental.pig.photos.blank? %>
+              <%= image_tag "default-pig.jpg", class: "pig-pic" %>
+            <% else %>
+              <%= cl_image_tag rental.pig.photos.first.key, height: 300, width: 400, crop: :fill, class: "pig-pic" %>
+            <% end %>
             <div class="card-customer-rental-infos">
               <div>
                 <h2><%= rental.pig.name.capitalize %></h2>
-                  <p><%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %> - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %></p>
+                <p><%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %> - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %></p>
                 <% if rental.end_date < Date.yesterday %>
                   <p><%= "Past rental" %></p>
                 <% elsif rental.status == "pending" %>
@@ -23,7 +26,7 @@
                 <% end %>
               </div>
               <h2 class="card-customer-rental-pricing">
-                <%= rental.pig.daily_price * (rental.end_date - rental.start_date).to_i %> €</h2>
+              <%= rental.pig.daily_price * (rental.end_date - rental.start_date).to_i %> €</h2>
               <div class="avatar">
                 <% unless rental.pig.user.photo.key.nil? %>
                   <%= cl_image_tag rental.pig.user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -33,7 +36,8 @@
               </div>
             </div>
           </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
+    <% end %>
 </div>
