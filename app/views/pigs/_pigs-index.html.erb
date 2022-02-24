@@ -1,9 +1,15 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/3/a/6/3a653d5b19_50185574_cochon-pas-bete.jpg);">
   <div class="container">
     <h1>Pick a pig</h1>
-    <p>Get rid of your food scraps, adopt a pig !</p>
+    <p id="subtitle">Get rid of your food scraps, adopt a pig !</p>
     <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-flat" %>
   </div>
+</div>
+
+<div class= "content-container" style="width: 80%; height: 350px; margin-bottom: 35px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
 <div class="content-container pigs-list-container">
