@@ -44,37 +44,44 @@
               <% end %>
             </div>
             <div class="card_pig_detailed_rating">
-            <% if pig.rating == 1 %>
-              <span class="fa fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-            <% elsif pig.rating == 2 %>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-            <% elsif pig.rating == 3 %>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-            <% elsif pig.rating == 4 %>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa-regular fa-star"></span>
-            <% elsif pig.rating == 5 %>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            <% end %>
+              <% if pig.rating == 0 %>
+                <div class="rating-zero">
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 1 %>
+                <span class="fa fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 2 %>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 3 %>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 4 %>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 5 %>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              <% end %>
           <h2 class="card-pig-pricing pe-2"><%= pig.daily_price %> €/day</h2>
           </div>
           </div>

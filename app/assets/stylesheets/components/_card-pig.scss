@@ -81,6 +81,9 @@
   padding-top: 10px;
 }
 
+.rating-zero {
+  visibility:hidden;
+
 .card-pig-available {
   position: absolute;
   left: 5px;
@@ -101,9 +104,4 @@
     padding: 4px 8px;
     border-radius: 4px;
   }
-}
-
-
-.rating-zero {
-  display: none;
 }

@@ -31,7 +31,14 @@
               <% end %>
             </div>
             <div class="card_pig_rating">
-              <% if pig.rating == 1 %>
+              <% if pig.rating == 0 %>
+                <div class="rating-zero">
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+                <span class="fa-regular fa-star"></span>
+              <% elsif pig.rating == 1 %>
                 <span class="fa fa-star"></span>
                 <span class="fa-regular fa-star"></span>
                 <span class="fa-regular fa-star"></span>
