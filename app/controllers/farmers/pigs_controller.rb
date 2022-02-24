@@ -30,7 +30,11 @@ class Farmers::PigsController < ApplicationController
   end
 
   def destroy
-    @pig.destroy
+    if @pig.rentals.empty?
+      @pig.destroy
+    else
+      flash[:alert] = "I'm rented, I can't be deleted"
+    end
     redirect_to farmers_pigs_path
   end
 

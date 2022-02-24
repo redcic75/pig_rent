@@ -10,9 +10,13 @@ puts "DB cleaned"
 puts "Creating 4 users"
 
 gala = User.create(email: 'gala@mail.com', password: "azerty", farmer: true, address: "Bourret", first_name: "Gala", last_name: "Thevenet")
+gala.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Users/gala_by9udp.jpg'), filename: 'gala_by9udp.jpg', content_type: 'image/jpg')
 marion = User.create(email: 'marion@mail.com', password: "marion", farmer: false, address: "Montauban", first_name: "Marion", last_name: "Santos")
+marion.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Users/marion2_dpnplg.jpg'), filename: 'marion2_dpnplg.jpg', content_type: 'image/jpg')
 carole = User.create(email: 'carole@mail.com', password: "carole", farmer: false, address: "Castres-Gironde", first_name: "Carole", last_name: "Chéné")
+carole.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Users/carole_s23qgu.jpg'), filename: 'carole_s23qgu.jpg', content_type: 'image/jpg')
 cedric = User.create(email: 'cedric@mail.com', password: "cedric", farmer: true, address: "Mérignac", first_name: "Cédrir", last_name: "Louyot")
+cedric.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Users/cedric_peqsvm.jpg'), filename: 'cedric_peqsvm.jpg', content_type: 'image/jpg')
 
 puts "Creating 4 pigs"
 

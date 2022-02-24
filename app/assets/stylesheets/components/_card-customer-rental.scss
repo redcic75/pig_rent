@@ -1,9 +1,11 @@
-.card-pig {
+.card-customer-rental {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transform: scale(1);
   transition: transform .3s;
+  margin-bottom: 24px;
+
 
   &:hover {
     opacity: 0.7;
@@ -28,21 +30,21 @@
   }
 }
 
-.card-pig h2 {
+.card-customer-rental h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   color: grey;
 }
 
-.card-pig p {
+.card-customer-rental p {
   font-size: 14px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-pig .card-pig-infos {
+.card-customer-rental .card-customer-rental-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -50,7 +52,7 @@
   position: relative;
 }
 
-.card-pig-infos .card-pig-user {
+.card-customer-rental-infos .card-customer-rental-user {
   position: absolute;
   right: 16px;
   top: -20px;
@@ -58,7 +60,7 @@
   z-index: 1;
 }
 
-.card-pig-infos {
+.card-customer-rental-infos {
   position: relative;
 
   .avatar {
@@ -66,17 +68,4 @@
     right: 5px;
     top: -10px;
   }
-}
-
-.card-pig .card_pig_rating {
-  font-size: 15px;
-  margin-top: 10px;
-  color: grey;
-}
-
-.card-pig-pricing {
-  text-align: right;
-  //border-top-style: outset;
-  margin: 6px 0px 0px 0px;
-  padding-top: 10px;
 }
