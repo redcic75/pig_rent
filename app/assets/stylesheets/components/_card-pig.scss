@@ -81,30 +81,28 @@
   padding-top: 10px;
 }
 
-.card-pig-available .card-pig-available-true {
+.card-pig-available {
   position: absolute;
-  right: 282px;
-  top: -190px;
-  background-color: #7FB069;
+  left: 5px;
+  top: 5px;
   color: white;
   font-weight: 400;
-  border-radius: 5px;
-  padding: 1px 6px;
-  box-shadow: 1px 1px 1px lightgray;
+  box-shadow: 1px 1px 4px #6c757d;
+
+
+  .card-pig-available-true {
+    background-color: #7FB069;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .card-pig-available-false {
+    background-color: #9F4A54;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
 }
 
-.card-pig-available .card-pig-available-false {
-  position: absolute;
-  right: 300px;
-  top: -190px;
-  background-color: #9F4A54;
-  color: white;
-  font-weight: 400;
-  border-radius: 5px;
-  padding: 1px 6px;
-  box-shadow: 1px 1px 1px lightgray;
-
-}
 
 .rating-zero {
   display: none;
