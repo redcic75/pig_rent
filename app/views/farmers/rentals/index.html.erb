@@ -1,6 +1,8 @@
 <div class="content-container">
   <h1 class="show-title">My rentals</h1>
-  <div class="d-flex justify-content-between align-items-center my-3">
+  <% if @rentals.empty? %>
+    <h2 class="d-flex justify-content-center mt-5">You have no rentals yet </h2>
+  <% else %>
     <div class="pigs-list-container">
       <% @rentals.each do |rental| %>
         <div class="card-customer-rental">
@@ -12,7 +14,7 @@
             <div class="card-customer-rental-infos">
               <div>
                 <h2><%= rental.pig.name.capitalize %></h2>
-                  <p><%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %> - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %></p>
+                <p><%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %> - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %></p>
                 <% if rental.end_date < Date.yesterday %>
                   <p><%= "Past rental" %></p>
                 <% elsif rental.status == "pending" %>
@@ -36,8 +38,9 @@
                 <% end %>
               </div>
             </div>
-          </div>
+        </div>
       <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

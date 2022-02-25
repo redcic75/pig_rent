@@ -6,6 +6,7 @@
   width: 50%;
   margin: 0 auto;
   color: #808080;
+  border-radius: 4px;
 }
 
 .card-pig-detailed > img {
@@ -48,6 +49,6 @@
   margin-top: 10px;
 }
 
-.rating-zero {
+.rating-zero-hidden {
   visibility:hidden;
 }
