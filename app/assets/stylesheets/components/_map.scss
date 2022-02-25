@@ -26,6 +26,7 @@
   h5 {
     padding-top: 8px;
     color: #808080;
+    margin: 0;
   }
 
   h6 {
@@ -36,7 +37,7 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  padding: 20px 40px !important;
+  padding: 10px 40px 20px 40px !important;
 
   .avatar-user {
     text-align: center;
@@ -64,4 +65,8 @@
 .a-no-decoration {
   text-decoration: none;
   border: none;
+}
+
+.pig-list-popup {
+  gap: 20px;
 }

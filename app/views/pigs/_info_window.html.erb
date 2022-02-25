@@ -13,7 +13,7 @@
       <h6>No pig available</h6>
     <% else %>
       <h6>Pig's available</h6>
-      <div class="d-flex justify-content-center">
+      <div class="pig-list-popup d-flex justify-content-center">
         <% pig.user.pigs.where(active: true).each do |pig| %>
           <%= link_to pig_path(pig), class: "d-block a-no-decoration" do %>
             <div class="avatar avatar-pig">
