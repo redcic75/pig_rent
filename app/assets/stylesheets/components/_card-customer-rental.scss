@@ -9,7 +9,8 @@
 
 
   &:hover {
-    opacity: 0.7;
+    // opacity: 0.7;
+    cursor: pointer;
     transform: scale(1.03);
     transition: transform .3s;
   }
@@ -25,7 +26,7 @@
   }
 
   .delete-icon:hover {
-    // color: #9F4A54;
+    color: #9F4A54;
     color: red;
     opacity: .8;
   }
@@ -40,7 +41,7 @@
 
 .card-customer-rental p {
   font-size: 14px;
-  opacity: .7;
+  color: #808080;
   margin: 0;
 }
 
@@ -63,10 +64,45 @@
 
 .card-customer-rental-infos {
   position: relative;
+  padding: 16px;
 
   .avatar {
     position: absolute;
     right: 5px;
     top: -10px;
   }
+}
+
+.pen-icon {
+  margin-bottom: 8px !important;
+}
+.card-customer-rental-pricing {
+  font-size: 16px;
+}
+
+.status {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: white;
+  font-weight: 400;
+  box-shadow: 1px 1px 4px #6c757d;
+}
+
+.green-status {
+  background-color: #7FB069;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.yellow-status {
+  background-color: #F8AD9D;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.red-status {
+  background-color: #9F4A54;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
