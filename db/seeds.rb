@@ -18,30 +18,30 @@ carole.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upl
 cedric = User.create!(email: 'cedric@mail.com', password: "cedric", farmer: true, address: "Mérignac", first_name: "Cédric", last_name: "Louyot")
 cedric.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Users/cedric_peqsvm.jpg'), filename: 'cedric_peqsvm.jpg', content_type: 'image/jpg')
 
-puts "Creating 4 pigs"
+puts "Creating 9 pigs"
 
 bernadette = Pig.create!(name: 'bernadette', required_space: 200, eat_capacity: 2, user: gala, daily_price: 10, rating: 3, active: true)
-bernadette.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Cochons/images_ry5wnp.jpg'), filename: 'images_ry5wnp.jpg', content_type: 'image/jpg')
+bernadette.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Cochons/cochon7_cfb5bf.jpg'), filename: 'cochon7_cfb5bf.jpg', content_type: 'image/jpg')
 
 boris = Pig.create!(name: 'boris', required_space: 100, eat_capacity: 1, user: gala, daily_price: 15, rating: 4, active: true)
-boris.photos.attach(io: URI.open('https://res.cloudinary.com/de2xlu7kn/image/upload/v1645623146/Cochons/cochon_sdpq9x.jpg'), filename: 'cochon_sdpq9x.jpg', content_type: 'image/jpg')
+boris.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645799151/Cochons/cochon8_hcg15u.jpg'), filename: 'cochon8_hcg15u.jpg', content_type: 'image/jpg')
 
 barbara = Pig.create!(name: 'barbara', required_space: 100, eat_capacity: 1, user: marion, daily_price: 15, rating: 3, active: true)
-barbara.photos.attach(io: URI.open('https://res.cloudinary.com/de2xlu7kn/image/upload/v1645623146/Cochons/cochon4_yuqmup.jpg'), filename: 'cochon4_yuqmup.jpg', content_type: 'image/jpg')
+barbara.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645799150/Cochons/cochon3_rv4wqk.jpg'), filename: 'cochon3_rv4wqk.jpg', content_type: 'image/jpg')
 
 bertrand = Pig.create!(name: 'bertrand', required_space: 200, eat_capacity: 1, user: marion, daily_price: 20, rating: 4)
 
 baptiste = Pig.create!(name: 'baptiste', required_space: 100, eat_capacity: 1, user: marion, daily_price: 17, rating: 5, active: true)
-baptiste.photos.attach(io: URI.open('https://res.cloudinary.com/de2xlu7kn/image/upload/v1645623146/Cochons/cochon3_c2v1lz.jpg'), filename: 'cochon3_c2v1lz.jpg', content_type: 'image/jpg')
+baptiste.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645799150/Cochons/cochon4_j4ikxu.jpg'), filename: 'cochon4_j4ikxu.jpg', content_type: 'image/jpg')
 
 billy = Pig.create!(name: 'billy', required_space: 250, eat_capacity: 2, user: gala, daily_price: 10, rating: 2, active: true)
-billy.photos.attach(io: URI.open('https://res.cloudinary.com/de2xlu7kn/image/upload/v1645623146/Cochons/cochon2_bef3gw.jpg'), filename: 'cochon2_bef3gw.jpg', content_type: 'image/jpg')
+billy.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645799150/Cochons/cochon6_hukvw3.jpg'), filename: 'cochon6_hukvw3.jpg', content_type: 'image/jpg')
 
 barnabe = Pig.create!(name: 'barnabe', required_space: 50, user: marion, daily_price: 10, rating: 4, active: true)
-barnabe.photos.attach(io: URI.open('https://res.cloudinary.com/de2xlu7kn/image/upload/v1645621298/Cochons/c56a42fb04d265d2232db752cb71a4f1--pet-pigs-guinea-pigs_hkmlxp.jpg'), filename: 'c56a42fb04d265d2232db752cb71a4f1--pet-pigs-guinea-pigs_hkmlxp.jpg', content_type: 'image/jpg')
+barnabe.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645799150/Cochons/cochon2_mymyjm.jpg'), filename: 'cochon2_mymyjm.jpg', content_type: 'image/jpg')
 
 basile = Pig.create!(name: 'basile', eat_capacity: 1, user: cedric, daily_price: 15, rating: 1)
-basile.photos.attach(io: URI.open('https://res.cloudinary.com/de2xlu7kn/image/upload/v1645611529/Cochons/q3sori3oseeqjplwhcnu.jpg'), filename: 'q3sori3oseeqjplwhcnu.jpg', content_type: 'image/jpg')
+basile.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645799150/Cochons/Cochon1_vxrnnn.jpg'), filename: 'Cochon1_vxrnnn.jpg', content_type: 'image/jpg')
 
 bastien = Pig.create(name: 'bastien', required_space: 100, eat_capacity: 1, user: gala, daily_price: 15, rating: 5)
 
