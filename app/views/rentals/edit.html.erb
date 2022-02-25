@@ -1,18 +1,40 @@
-<div class="new-container">
-  <div class="rental-card">
-    <% d_start = @rental.start_date %>
-    <% d_end = @rental.end_date %>
-    <p><%= d_start.day %>/<%= d_start.month %>/<%= d_start.year %> - <%= d_end.day %>/<%= d_end.month %>/<%= d_end.year %></p>
+<div class="content-container">
+  <h1 class="show-title">Edit my pending rentals</h1>
 
-    <%# trouver une façon d'afficher le prix, ma méthode ci dessous ne fonctionne pas %>
-    <%# <p><%= @pig.daily_price * (@rental.end_date - @rental.start_date) %>
+    <div class="card-rental-detailed">
+      <% if @rental.pig.photos.blank? %>
+        <%= image_tag "default-pig.jpg", class: "pig-pic" %>
+      <% else %>
+        <%= cl_image_tag @rental.pig.photos.first.key, height: 300, width: 400, crop: :fill, class: "pig-pic" %>
+      <% end %>
+        <div class="card-rental-detailed-infos">
+          <div>
+            <h2><%= @rental.pig.name.capitalize %></h2> <br>
+              <p>Rent to <%= @rental.user.first_name %> <%= @rental.user.last_name %></p>
+              <p> <%= @rental.start_date.day %>/<%= @rental.start_date.month %>/<%= @rental.start_date.year %> - <%= @rental.end_date.day %>/<%= @rental.end_date.month %>/<%= @rental.end_date.year %></p>
+          </div>
+          <h2 class="card-rental-detailed-pricing">
+            <%= @rental.pig.daily_price * (@rental.end_date - @rental.start_date).to_i %> €</h2>
+          <div class="avatar">
+            <% unless @rental.pig.user.photo.key.nil? %>
+              <%= cl_image_tag @rental.pig.user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <img src="/assets/user.png" class="avatar dropdown-toggle" id= "navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+            <% end %>
+          </div>
+        </div>
 
-    <p><%= @rental.user.email %> - <%= @rental.pig.name %></p>
-  </div>
+      <%= simple_form_for @rental do |f| %>
+        <div class="form-input-rental">
+          <%= f.collection_radio_buttons :status, [['accepted', 'accepted'], ['rejected', 'rejected']], :first, :last %>
+        </div>
 
-  <%# Problème dans mon form, je n'arrive pas à ce que le cercle de accepted soit sur la bonne ligne %>
-  <%= simple_form_for @rental do |f| %>
-  <%= f.collection_radio_buttons :status, [['accepted', 'accepted'], ['rejected', 'rejected']], :first, :last %>
-  <%= f.submit %>
-  <% end %>
+        <div class="form-button-rental">
+          <%= f.submit "Update rental", class: "btn btn-flat" %>
+        </div>
+      <% end %>
+
+    </div>
+
+
 </div>

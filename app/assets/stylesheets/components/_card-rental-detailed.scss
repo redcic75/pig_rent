@@ -1,0 +1,75 @@
+.card-rental-detailed {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transform: scale(1);
+  transition: transform .3s;
+  margin: 0 auto;
+  width: 50%;
+
+  .pig-pic {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-rental-detailed h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: grey;
+}
+
+.card-rental-detailed p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-rental-detailed .card-rental-detailed-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.ccard-rental-detailed-infos .card-rental-detailed-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+  z-index: 1;
+}
+
+.card-rental-detailed-infos {
+  position: relative;
+
+  .avatar {
+    width: 56px;
+    position: absolute;
+    right: 5px;
+    top: -10px;
+  }
+}
+
+.form-input-rental {
+  // padding: 20px 200px;
+  // margin: 30px;
+  font-weight: bold;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  text-align: center;
+}
+
+.form-button-rental {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  // margin-bottom: 110px;
+}
+
+label.collection_radio_buttons{
+  padding: 10px;
+}
