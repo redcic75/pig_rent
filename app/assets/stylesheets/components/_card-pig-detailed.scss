@@ -60,25 +60,27 @@
 
 .card-pig-detailed {
   position: relative;
-  .card-pig-available {
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    color: white;
-    font-weight: 400;
-    box-shadow: 1px 1px 4px #6c757d;
 
 
-    .card-pig-available-true {
-      background-color: #7FB069;
-      padding: 4px 8px;
-      border-radius: 4px;
-    }
+}
 
-    .card-pig-available-false {
-      background-color: #9F4A54;
-      padding: 4px 8px;
-      border-radius: 4px;
-    }
+.card-pig-available {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: white;
+  font-weight: 400;
+  box-shadow: 1px 1px 4px #6c757d;
+  border-radius: 4px;
+
+
+  .card-pig-available-true {
+    background-color: #7FB069;
+    padding: 4px 8px;
+  }
+
+  .card-pig-available-false {
+    background-color: #9F4A54;
+    padding: 4px 8px;
   }
 }
