@@ -20,12 +20,32 @@
           <% else %>
             <%= cl_image_tag rental.pig.photos.first.key, height: 300, width: 400, crop: :fill, class: "pig-pic" %>
           <% end %>
+
+<!--             <div class="card-customer-rental-infos">
+              <div>
+                <h2><%= rental.pig.name.capitalize %></h2>
+                <p><%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %> - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %></p>
+                <% if rental.end_date <= Date.yesterday %>
+                  <p><%= "Past rental" %></p>
+                <% elsif rental.status == "pending" %>
+                  <p class="yellow-status"><%= rental.status %></p>
+                <% elsif rental.status == "rejected" %>
+                  <p class= "red-status"><%= rental.status %></p>
+                <% elsif rental.status == "accepted" %>
+                  <p class="green-status"><%= rental.status %></p>
+                <% end %>
+                <p><%= link_to edit_rental_path(rental), class: "edit-icon ms-3" do %>
+                  <i class="fa-solid fa-pen"></i>
+                <% end %></p>
+              </div> -->
+
           <div class="card-customer-rental-infos">
             <div>
               <h2><%= rental.pig.name.capitalize %></h2>
               <p>
                 <%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %>  - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %>
               </p>
+
               <h2 class="card-customer-rental-pricing">
                 <%= rental.pig.daily_price * (rental.end_date - rental.start_date).to_i %> €
               </h2>
