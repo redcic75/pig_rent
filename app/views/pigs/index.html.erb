@@ -16,6 +16,13 @@
     <% @pigs.each do |pig| %>
       <%= link_to pig_path(pig) do %>
         <div class="card-pig">
+          <div class="card-pig-available">
+            <% if pig.active %>
+              <div class="card-pig-available-true">available</div>
+            <% else %>
+              <div class="card-pig-available-false">inactive</div>
+            <% end %>
+          </div>
           <% if pig.photos.blank? %>
             <%= image_tag "default-pig.jpg", class: "pig-pic" %>
           <% else %>
@@ -31,7 +38,7 @@
               <% end %>
             </div>
             <div class="card_pig_rating">
-              <% if pig.rating == 0 %>
+              <% if pig.rating == nil %>
                 <div class="rating-zero-hidden">
                   <span class="fa-regular fa-star"></span>
                   <span class="fa-regular fa-star"></span>
