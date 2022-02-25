@@ -3,3 +3,14 @@
   min-height: 0 !important;
   margin-bottom: 35px;
 }
+
+.mapboxgl-ctrl-logo {
+  visibility: hidden;
+}
+
+.mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-bottom-right {
+  visibility: hidden;
+  a {
+    visibility: hidden;
+  }
+}
