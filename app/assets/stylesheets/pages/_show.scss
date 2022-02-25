@@ -8,16 +8,12 @@
 margin: 20px 0;
   color: #5E747F;
   text-align: center;
-
-  .position-relative-title {
-    position: relative;
-}
+  position: relative;
 
   .position-absolute-button {
     position: absolute;
-    right: 810px;
-    top: 96px;
-    width: 124px;
+    left: 0px;
+    top: 4px;
     z-index: 1;
   }
 }
