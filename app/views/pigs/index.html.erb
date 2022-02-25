@@ -6,13 +6,15 @@
   </div>
 </div>
 
-<div class= "content-container" id="pig-map"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+<div class="content-container">
+  <div id="pig-map"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
-<div class="content-container pigs-list-container">
+
+  <div class="pigs-list-container">
     <% @pigs.each do |pig| %>
       <%= link_to pig_path(pig) do %>
         <div class="card-pig">
@@ -91,4 +93,5 @@
         </div>
       <% end %>
     <% end %>
+  </div>
 </div>
