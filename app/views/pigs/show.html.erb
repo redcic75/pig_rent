@@ -4,6 +4,13 @@
   <h1 class="show-title"> <%= @pig.name.capitalize %> from   <%= @pig.user.first_name %>'s farm</h1>
 
   <div class="card-pig-detailed">
+    <div class="card-pig-available">
+          <% if @pig.active %>
+            <div class="card-pig-available-true">available</div>
+          <% else %>
+            <div class="card-pig-available-false">inactive</div>
+          <% end %>
+    </div>
     <% if @pig.photos.blank? %>
       <%= image_tag "default-pig.jpg" %>
     <% else %>
@@ -26,11 +33,12 @@
       <div class="card-pig-detailed-rating">
         <% if @pig.rating == nil %>
           <div class="rating-zero">
-          <span class="fa-regular fa-star"></span>
-          <span class="fa-regular fa-star"></span>
-          <span class="fa-regular fa-star"></span>
-          <span class="fa-regular fa-star"></span>
-          <span class="fa-regular fa-star"></span>
+            <span class="fa-regular fa-star"></span>
+            <span class="fa-regular fa-star"></span>
+            <span class="fa-regular fa-star"></span>
+            <span class="fa-regular fa-star"></span>
+            <span class="fa-regular fa-star"></span>
+          </div>
         <% elsif @pig.rating == 1 %>
           <span class="fa fa-star"></span>
           <span class="fa-regular fa-star"></span>
@@ -63,6 +71,13 @@
           <span class="fa fa-star"></span>
         <% end %>
       <h2 class="card-pig-detailed-pricing"><%= @pig.daily_price %> €/day</h2>
+      </div>
+      <div class="avatar">
+              <% unless @pig.user.photo.key.nil? %>
+                <%= cl_image_tag pig.user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <img src="/assets/user.png" class="avatar dropdown-toggle" id= "navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+              <% end %>
       </div>
     </div>
     <%= link_to "Pick this pig", new_pig_rental_path(@pig), class: "btn btn-flat mb-2 ms-2" %>
