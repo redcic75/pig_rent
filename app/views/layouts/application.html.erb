@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="icon" href="/assets/pig-logo.png" type="image/x-icon">
-
+    <%# <link rel="icon" href="/assets/pig-logo.png" type="image/x-icon"> %>
+    <%= favicon_link_tag asset_path('pig-logo.ico') %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/c15de652c1.js" crossorigin="anonymous"></script>
