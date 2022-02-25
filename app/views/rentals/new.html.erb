@@ -1,12 +1,14 @@
 <div class="content-container">
   <h1 class="show-title">New rental</h1>
-  <h2><%= @pig.name.capitalize %> details reminder</h2>
-  <p>Daily cost: <%= @pig.daily_price %> €</p>
-  <p>Required space for the pig: <%= @pig.required_space %> m²</p>
+  <div class="rental-new-container">
+    <h2 class="title-center"><%= @pig.name.capitalize %> details reminder</h2>
+    <p class="p-center">Daily cost: <strong><%= @pig.daily_price %> €</strong></p>
+    <p class="p-center">Required space for the pig: <strong><%= @pig.required_space %> m²</strong></p>
 
-  <%= simple_form_for [@pig, @rental] do |f| %>
-    <%= f.input :start_date, as: :string %>
-    <%= f.input :end_date, as: :string %>
-    <%= f.submit "Rent the pig", class: "btn btn-flat"%>
-  <% end %>
+    <%= simple_form_for [@pig, @rental] do |f| %>
+      <%= f.input :start_date, as: :string %>
+      <%= f.input :end_date, as: :string %>
+      <%= f.submit "Rent the pig", class: "btn btn-flat"%>
+    <% end %>
+  </div>
 </div>
