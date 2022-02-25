@@ -1,7 +1,25 @@
 .show-title {
+  margin: 20px 0;
+  color: #5E747F;
+  text-align: center;
+}
+
+.show-title-centered {
 margin: 20px 0;
   color: #5E747F;
   text-align: center;
+
+  .position-relative-title {
+    position: relative;
+}
+
+  .position-absolute-button {
+    position: absolute;
+    right: 810px;
+    top: 96px;
+    width: 124px;
+    z-index: 1;
+  }
 }
 
 .btn-centered {
