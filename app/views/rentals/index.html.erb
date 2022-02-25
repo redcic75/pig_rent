@@ -6,6 +6,15 @@
       <div class="pigs-list-container">
         <% @rentals.each do |rental| %>
           <div class="card-customer-rental">
+            <% if rental.end_date < Date.yesterday %>
+              <div><%= "Past rental" %></div>
+            <% elsif rental.status == "pending" %>
+              <div class="status yellow-status"><%= rental.status %></div>
+            <% elsif rental.status == "rejected" %>
+              <div class= "status red-status"><%= rental.status %></div>
+            <% elsif rental.status == "accepted" %>
+              <div class="status green-status"><%= rental.status %></div>
+            <% end %>
             <% if rental.pig.photos.blank? %>
               <%= image_tag "default-pig.jpg", class: "pig-pic" %>
             <% else %>
@@ -15,23 +24,9 @@
               <div>
                 <h2><%= rental.pig.name.capitalize %></h2>
                 <p><%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %> - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %></p>
-                <% if rental.end_date < Date.yesterday %>
-                  <p><%= "Past rental" %></p>
-                <% elsif rental.status == "pending" %>
-                  <p class="yellow-status"><%= rental.status %></p>
-                <% elsif rental.status == "rejected" %>
-                  <p class= "red-status"><%= rental.status %></p>
-                <% elsif rental.status == "accepted" %>
-                  <p class="green-status"><%= rental.status %></p>
-                <% end %>
-                <div>
-                  <%= link_to rental_path(rental), method: :delete, class: "delete-icon ms-3" do %>
-                    <i class="fa-solid fa-trash"></i>
-                  <% end %>
-                </div>
               </div>
-              <h2 class="card-customer-rental-pricing">
-              <%= rental.pig.daily_price * (rental.end_date - rental.start_date).to_i %> €</h2>
+
+
               <div class="avatar">
                 <% unless rental.pig.user.photo.key.nil? %>
                   <%= cl_image_tag rental.pig.user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -39,6 +34,14 @@
                   <img src="/assets/user.png" class="avatar dropdown-toggle" id= "navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
                 <% end %>
               </div>
+            </div>
+            <div class="d-flex justify-content-between mx-3 mb-2">
+              <%= link_to rental_path(rental), method: :delete, class: "delete-icon" do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
+              <h2 class="card-customer-rental-pricing">
+                <%= rental.pig.daily_price * (rental.end_date - rental.start_date).to_i %> €
+              </h2>
             </div>
           </div>
         <% end %>

@@ -46,9 +46,7 @@
                 <%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %>  - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %>
               </p>
 
-              <h2 class="card-customer-rental-pricing">
-                <%= rental.pig.daily_price * (rental.end_date - rental.start_date).to_i %> €
-              </h2>
+
 
               <div class="avatar">
                 <% unless rental.pig.user.photo.key.nil? %>
@@ -59,10 +57,17 @@
               </div>
             </div>
           </div>
-            <p class="pen-icon"><%= link_to edit_rental_path(rental), class: "edit-icon ms-3" do %>
-              <i class="fa-solid fa-pen"></i>
-            <% end %></p>
 
+          <div class="d-flex justify-content-between">
+            <p class="pen-icon">
+              <%= link_to edit_rental_path(rental), class: "edit-icon ms-3" do %>
+                <i class="fa-solid fa-pen"></i>
+              <% end %>
+            </p>
+            <h2 class="card-customer-rental-pricing me-3">
+              <%= rental.pig.daily_price * (rental.end_date - rental.start_date).to_i %> €
+            </h2>
+          </div>
 
         </div>
       <% end %>
