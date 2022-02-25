@@ -9,7 +9,7 @@ puts "DB cleaned"
 
 puts "Creating 4 users"
 
-gala = User.create(email: 'gala@mail.com', password: "azerty", farmer: true, address: "Layrac", first_name: "Gala", last_name: "Thevenet")
+gala = User.create(email: 'gala@mail.com', password: "azerty", farmer: true, address: "Layrac", first_name: "Gala", last_name: "Thévenet")
 gala.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Users/gala_by9udp.jpg'), filename: 'gala_by9udp.jpg', content_type: 'image/jpg')
 marion = User.create(email: 'marion@mail.com', password: "marion", farmer: true, address: "Montauban", first_name: "Marion", last_name: "Santos")
 marion.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Users/marion2_dpnplg.jpg'), filename: 'marion2_dpnplg.jpg', content_type: 'image/jpg')
