@@ -20,8 +20,8 @@ cedric.photo.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upl
 
 puts "Creating 9 pigs"
 
-bernadette = Pig.create!(name: 'bernadette', required_space: 200, eat_capacity: 2, user: gala, daily_price: 10, rating: 3, active: true)
-bernadette.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Cochons/cochon7_cfb5bf.jpg'), filename: 'cochon7_cfb5bf.jpg', content_type: 'image/jpg')
+bernard = Pig.create!(name: 'bernard', required_space: 200, eat_capacity: 2, user: gala, daily_price: 10, rating: 3, active: true)
+bernard.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645623392/Cochons/cochon7_cfb5bf.jpg'), filename: 'cochon7_cfb5bf.jpg', content_type: 'image/jpg')
 
 boris = Pig.create!(name: 'boris', required_space: 100, eat_capacity: 1, user: gala, daily_price: 15, rating: 4, active: true)
 boris.photos.attach(io: URI.open('https://res.cloudinary.com/djcv5afgd/image/upload/v1645799151/Cochons/cochon8_hcg15u.jpg'), filename: 'cochon8_hcg15u.jpg', content_type: 'image/jpg')
@@ -51,6 +51,6 @@ Rental.create!(user: gala, pig: basile, start_date: Date.today, end_date: Date.t
 Rental.create!(user: gala, pig: barbara, start_date: Date.yesterday, end_date: Date.today, status: "rejected")
 Rental.create!(user: gala, pig: baptiste, start_date: Date.new(2022, 2, 28), end_date: Date.new(2022, 3, 5), status: "pending")
 Rental.create!(user: carole, pig: bertrand, start_date: Date.yesterday, end_date: Date.today, status: "pending")
-Rental.create!(user: carole, pig: bernadette, start_date: Date.today, end_date: Date.tomorrow, status: "pending")
+Rental.create!(user: carole, pig: bernard, start_date: Date.today, end_date: Date.tomorrow, status: "pending")
 
 puts "Creations done"
