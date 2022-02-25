@@ -1,2 +1,31 @@
-<h2><%= pig.user.first_name.capitalize %> <%= pig.user.first_name.capitalize %>'s farm</h2>
-<p><%= pig.user.address %></p>
+<h5><%= pig.user.first_name.capitalize %>'s farm</h5>
+  <div class="avatar-user">
+    <% unless pig.user.photo.key.nil? %>
+      <%= cl_image_tag pig.user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% else %>
+      <img src="/assets/user.png" class="avatar dropdown-toggle" id= "navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+    <% end %>
+  </div>
+  <p><%= pig.user.address %></p>
+
+  <div class="content-avatar">
+    <% if pig.user.pigs.where(active:true).blank? %>
+      <h6>No pig available</h6>
+    <% else %>
+      <h6>Pig's available</h6>
+      <div class="d-flex justify-content-center">
+        <% pig.user.pigs.where(active: true).each do |pig| %>
+          <%= link_to pig_path(pig), class: "d-block a-no-decoration" do %>
+            <div class="avatar avatar-pig">
+              <% unless pig.photos.blank? %>
+                <%= cl_image_tag pig.photos.first.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <%= cl_image_tag("default-pig_f32irb", crop: :thumb, gravity: :face) %>
+              <% end %>
+              <p><%= pig.name.capitalize %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
