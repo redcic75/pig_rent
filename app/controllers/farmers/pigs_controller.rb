@@ -23,7 +23,7 @@ class Farmers::PigsController < ApplicationController
 
   def update
     if @pig.update(pig_params)
-      redirect_to(pig_path(@pig))
+      redirect_to farmers_pigs_path
     else
       render :new
     end
