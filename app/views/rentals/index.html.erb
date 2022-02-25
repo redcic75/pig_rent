@@ -1,7 +1,7 @@
 <div class="content-container">
-    <h1 class="show-title">My rentals</h1>
+    <h1 class="show-title">What I rented</h1>
     <% if @rentals.empty? %>
-      <h2 class="d-flex justify-content-center mt-5">You have no rentals yet </h2>
+      <h2 class="d-flex justify-content-center mt-5">You didn't rent any pig yet</h2>
     <% else %>
       <div class="pigs-list-container">
         <% @rentals.each do |rental| %>
