@@ -14,7 +14,7 @@
             <div class="card-customer-rental-infos">
               <div>
                 <h2><%= rental.pig.name.capitalize %></h2>
-                  <p><%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %> - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %></p>
+                <p><%= rental.start_date.day %>/<%= rental.start_date.month %>/<%= rental.start_date.year %> - <%= rental.end_date.day %>/<%= rental.end_date.month %>/<%= rental.end_date.year %></p>
                 <% if rental.end_date < Date.yesterday %>
                   <p><%= "Past rental" %></p>
                 <% elsif rental.status == "pending" %>
@@ -39,7 +39,7 @@
               </div>
             </div>
         </div>
-        <% end %>
+      <% end %>
       </div>
     </div>
   <% end %>
